@@ -1,0 +1,101 @@
+<!--Using HTML, Bootstrap, and JavaScript create a single page website that contains the following:
+A Bootstrap styled table representing your choice of data.
+A Bootstrap styled form that allows a user to add a new row to the table when clicking on submit.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week.10 Assigment</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body class="container">
+    <!--Table showing upcoming paintball events in the United states-->
+    <div class="container mt-4">
+      <h4 class="text-center">U.S.A NXL Paintball Tour 2024</h4>
+      <div class="card">
+        <!-- this card  class really helped add clean definition to the table and like the way it looked-->
+        <div class="card-body">
+          <table id="table-table" class="table">
+            <thead id="table-head">
+              <tr>
+                <th>Paintball Event</th>
+                <th>City, State</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Check</th>
+              </tr>
+            </thead>
+            <tbody
+              id="paintball-event-list"
+              class="table table-dark table-strped"
+            ><!--Gave some examples of input for user to go off of-->
+              <tr class="col-sm">
+                <td>NXL Las Vegas</td>
+                <td>Las Vegas, NV</td>
+                <td>2024-03-08</td>
+                <td>2024-03-15</td>
+                <td>
+                  <input type="checkbox" name="event-ready" id="event-ready" /><label
+                    for="event-ready"
+                    >Ready for Event!</label
+                  >
+                </td>
+                <td> <button class= "btn btn-sm btn-outline-primary" onclick="removeRow()">Event Over</td>
+                </tr>
+                <!-- Added checkboxes to show prepardness for the events-->
+              <div class="formInput">
+                <form id="form">
+                  <h6>Paintball Event Name:</h6>
+                  <input
+                    id="paintball-event-input"
+                    type="text"
+                    class="form-control form-control-sm"
+                  />
+                  <h6>City & State:</h6>
+                  <input
+                    id="state-input"
+                    type="text"
+                    class="form-control form-control-sm"
+                  />
+                  <h6>Start Date:</h6>
+                  <input
+                    id="start-date-input"
+                    type="date"
+                    class="form-control form-control-sm"
+                  />
+                  <h6>End Date:</h6>
+                  <input
+                    id="end-date-input"
+                    type="date"
+                    class="form-control form-control-sm"
+                  />
+
+                  <div><!--This is the submit button I wanted to use the onclick to make a delete button, but I could not get it-->
+                    <button
+                      onclick="sendIt(event)"
+                      id="send-it"
+                      type="submit"
+                      class="btn btn-med btn-primary form-control"
+                    >
+                      SEND IT!
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              <!--Need to add input and submit buttons-->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="week.10.js"></script>
+  </body>
+</html>
